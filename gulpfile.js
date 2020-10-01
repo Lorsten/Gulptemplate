@@ -11,6 +11,7 @@ const del = require('del');
 const cleanCSS = require('gulp-clean-css');
 const imagemin = require('gulp-imagemin');
 const cache = require("gulp-cache");
+const babel = require('gulp-babel');
 
 
 /*
@@ -84,6 +85,7 @@ const manageImages = (done) =>{
 const jsTask = () => {
     return src(files.jsPath)
         .pipe(concat('main.js'))
+        .pipe(babel())
         .pipe(uglify())
         .pipe(dest('pub/js'))
 }
