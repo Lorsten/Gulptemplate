@@ -80,12 +80,16 @@ const manageImages = (done) =>{
 
 /*
  Task for javascript files
- Merge js files and then minify using the plugin uglify
+ Merge js files 
+ Compile with babel
+ and then minify using the plugin uglify
  */
 const jsTask = () => {
     return src(files.jsPath)
         .pipe(concat('main.js'))
-        .pipe(babel())
+         .pipe(babel({
+            presets: ["@babel/preset-env"]
+          }))
         .pipe(uglify())
         .pipe(dest('pub/js'))
 }

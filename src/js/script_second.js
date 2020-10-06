@@ -1,6 +1,4 @@
 
-
-
 class minClass {
     constructor(fornamn,efternamn){
       this.fornamn = fornamn;
@@ -9,13 +7,12 @@ class minClass {
      fullname(){
         return this.fornamn + " "+this.efternamn;
     }
-    get myname(){
+    get myName(){
         return this.fullname();
     }
 }
-
-let name = new minClass("olof", "Andersson");
-console.log(name.myname);
+let myname = new minClass("olof", "Andersson");
+console.log(myname.myName);
 
 
 const arr = [
