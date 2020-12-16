@@ -1,0 +1,30 @@
+
+
+
+@mixin screen-size($size) {
+    @if $size == phone{
+        @media (max-width: 600px) { @content; }
+    }
+    @else if $size == tablet{
+        @media(min-width:601px) {@content;}
+    }
+    @else if $size == portable{
+        @media(max-width:899px) {@content;}
+    }
+    @else if $size == desktop{
+        @media(min-width:900px) {@content;}
+    }
+}
+
+
+@mixin flex($direction){
+    display: flex;
+    flex-wrap: wrap;
+    @if $direction == row{
+        flex-direction: row;
+    }
+    @else if $direction == column{
+        flex-direction: column;
+    }
+
+}
